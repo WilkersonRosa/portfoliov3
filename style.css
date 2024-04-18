@@ -9,25 +9,41 @@ body {
   background: linear-gradient(to left, #777, #fff, #777);
 }
 header {
-  background: linear-gradient(to top, #711, #f33);
-  height: 5rem;
+  background: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15rem 5rem 5rem 5rem;
+  color: #fff;
+}
+
+header p{
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+header h1{
+  font-size: 50pt;
+  color: #1bb413;
+  font-family: "Concert One", sans-serif;
+}
+
+header h2{
+  color: #8adc86;
+}
+
+header button{
+  font-size: 17pt;
   padding: 1rem;
-  border-radius: 15px;
-  margin: 5px;
+  color: #0dff00;
+  background-color: #045600;
+  font-family: "Press Start 2P", system-ui;
+}
+header button:hover{
+  background-color: #0dff00;
+  color: #045600;
 }
 
-#logo {
-  font-size: 30pt;
-  font-family: cursive;
-  font-style: italic;
-  text-shadow: 0 0 5px #ddd
-}
-
-.menuopt {
-  text-decoration: none;
-  color: black;
-  margin-inline: 1rem;
+#img img{
+ width: 600px;
 }
