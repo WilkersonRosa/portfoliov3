@@ -1,3 +1,6 @@
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -6,34 +9,40 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 20px;
-  background: linear-gradient(to left, #777, #fff, #777);
 }
+
+/* Cabeçalho */
+
 header {
-  background: #000000;
+  background-image: url("source/portfolio-willrosa-background.png");
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15rem 5rem 5rem 5rem;
   color: #fff;
+  height: 500px;
 }
 
 header p{
   max-width: 500px;
   margin-bottom: 2rem;
+  color: #67a938;
 }
 
 header h1{
   font-size: 50pt;
-  color: #1bb413;
+  color: #d6a41a;
   font-family: "Concert One", sans-serif;
 }
 
 header h2{
-  color: #8adc86;
+  color: #8986dc;
 }
 
 header button{
-  font-size: 17pt;
+  font-size: 10pt;
   padding: 1rem;
   color: #0dff00;
   background-color: #045600;
@@ -44,6 +53,166 @@ header button:hover{
   color: #045600;
 }
 
-#img img{
- width: 600px;
+/* Sobre */
+
+#about {
+  background: #434343;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  padding: 5rem 1rem 7rem 5rem;
+  justify-content: space-around;
+  height: 700px;
+}
+
+#about div{
+  display: flex;
+  flex-direction: column;
+}
+
+#about div h2{
+  margin: 5rem 0rem;
+}
+
+/* Skills */
+
+#skills{
+  background: #434343;
+  color: #fff;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem;
+  
+}
+
+#skills h2{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#skills h3{
+  color: #8986dc;
+}
+#skills div{
+  margin: 2rem;
+  font-family: "Press Start 2P", system-ui;
+}
+
+#html div{
+  width: 300px;
+  height: 10px;
+  background: #0dff00;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+#css div{
+  width: 300px;
+  height: 10px;
+  background: #0dff00;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+#github div{
+  width: 300px;
+  height: 10px;
+  background: #0dff00;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+#JavaScript div{
+  width: 2px;
+  height: 10px;
+  background: #0dff00;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+/* Projetos */
+
+#projects {
+  background: #000000;
+  color: #fff;
+  padding: 5rem;
+}
+
+#projectcontainer{
+  display: flex;
+  align-items: center;
+}
+
+.project{
+  width: 250px;
+  height: 400px;
+  background: #777;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem;
+  padding: 2rem;
+}
+.project img{
+  border-radius: 5px;
+}
+
+/* Rodape */
+
+footer{
+  background: #434343;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: #fff;
+  font-family: "Concert One", sans-serif;
+}
+
+/* Dispositivos móveis */
+
+@media (max-width: 850px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    background-image: none;
+    background-color: #000000;
+  }
+  #nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #about{
+    flex-direction: column;
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  #about img {
+    width: 40vh;
+  }
+
+  #skills {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  #skills div{
+    margin: 1rem 0;
+  }
+
+  #projectcontainer{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+  }
+
+  footer {
+    padding: 1rem;
+  }
 }
