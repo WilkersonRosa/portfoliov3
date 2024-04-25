@@ -14,29 +14,129 @@
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="#">Portfólio</a></li>
-        <li><a href="#">contato</a></li>
+      <ul class="hiden">
+        <li><a href="#home"><img src="source/1-removebg-preview.png" alt=""></a></li>
+        <li><a href="#about"><img src="source/2-removebg-preview.png" alt=""></a></li>
+        <li><a href="#projects"><img src="source/3-removebg-preview.png" alt=""></a></li>
+        <li><a href="#contato"><img src="source/4-removebg-preview.png" alt=""></a></li>
+      </ul>
+      <ul class="mobile">
+        <li><a href="index.html"><img src="source/1-removebg-preview.png" alt=""></a></li>
+        <li><a href="sobre.html"><img src="source/2-removebg-preview.png" alt=""></a></li>
+        <li><a href="portfolio.html"><img src="source/3-removebg-preview.png" alt=""></a></li>
+        <li><a href="contato.html"><img src="source/4-removebg-preview.png" alt=""></a></li>
       </ul>
     </nav>
   </header>
   <section id="home">
+    <div class="perfilimage"><img src="source/willrosa-removebg-preview (1).png" alt="" class="perfilimage"></div>
     <div>
+      
       <h1>Will Rosa</h1>
       <h2>// Web Developer</h2>
       <p>Programador auto didata, sou apaixonado por desenvolver soluções para web, buscando sempre conectar negócios e seus potenciais clientes.</p>
       <div id="nav">
-        <button type="button">Entre em Contato</button>
-        <button type="button">Saiba Mais</button>
+        <!-- <button type="button">Saiba Mais</button> -->
       </div>
     </div>
   </section>
-  
-  <footer>
-    <p>Todos os direitos reservados</p>
-    <p>Powered by Will Rosa</p>
-  </footer>
+  <div class="hiden">
+    <section id="about">
+      <div id="info">
+        <h2>#Informações Pessoais { </h2>
+        <div class="divcontent">
+          <p><span>Nome: </span>Wilkerson;</p>
+          <p><span>Sobrenome: </span>Rosa dos Santos;</p>
+          <p><span>Idade: </span>23;</p>
+          <p><span>Nacionalidade: </span>Brasileiro;</p>
+          <p><span>Freelance: </span><strong class="destaque">Disponível;</strong></p>
+          <p><span>Telefone: </span>(031) 9 8109-4499;</p>
+          <p><span>Email: </span>willrosacontato@gmail.com;</p>
+          <p><span>Idiomas: </span>Portugês;</p>
+        </div>
+        <div class="h2style">}</div>
+        <br>
+      </div>
+      <div id="skillcont">
+        <h2>#Skills {</h2>
+        <div class="divcontent">
+          <div id="skills"><span>HTML 5:</span><div id="html" class="skillprog"></div></div>
+          <div id="skills"><span>CSS 3:</span><div id="css" class="skillprog"></div></div>
+          <div id="skills"><span>JavaScript:</span><div id="JavaScript" class="skillprog"></div></div>
+          <div id="skills"><span>Git/GitHub:</span><div id="github" class="skillprog"></div></div>
+        </div>
+        <div class="h2style">}</div>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>#Meus Projetos { </h2>
+        <div class="portfoliocontainer">
+          
+          <ul class="slide-list">
+            <li>
+              <div class="portfoliocontent">
+                <img src="source/default-project.png" alt="Projeto Padrão">
+                <p> <span>Projeto Default1: </span> Breve descrição do projeto contendo as tecnologias utilizadas;</p>
+              </div>
+            </li>
+            <li>
+              <div class="portfoliocontent">
+                <img src="source/default-project.png" alt="Projeto Padrão">
+                <p> <span>Projeto Default2: </span> Breve descrição do projeto contendo as tecnologias utilizadas;</p>
+              </div>
+            </li>
+            <li>
+              <div class="portfoliocontent">
+                <img src="source/default-project.png" alt="Projeto Padrão">
+                <p> <span>Projeto Default3: </span> Breve descrição do projeto contendo as tecnologias utilizadas;</p>
+              </div>
+            </li>
+            <li>
+              <div class="portfoliocontent">
+                <img src="source/default-project.png" alt="Projeto Padrão">
+                <p> <span>Projeto Default4: </span> Breve descrição do projeto contendo as tecnologias utilizadas;</p>
+              </div>
+            </li>
+          </ul>
+          
+          
+        </div>
+      <div class="h2style">}</div>
+    </section>
+    <section id="contato">
+      <h2>#Entre em contato { </h2>
+        <br>
+        <div id="formcontainer">
+          <div id="formulario">
+            <form action="#" method="get" onsubmit="abrirWhatsapp()">
+              <input type="text" name="nome" id="nome" placeholder="Nome" required><br>
+              <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required><br>
+              <input type="email" name="email" id="email" placeholder="E-mail" required><br>
+              <textarea name="msg" id="msg" placeholder="Mensagem" cols="30" rows="5" required></textarea><br>
+              <button type="submit"><img src="https://matheuscostadesign.github.io/enviar-para-whatsapp/assets/whatsapp.svg" alt="Icone Whatsapp"><span>Enviar dados p/ Whatsapp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <br>
+      <div class="h2style">}</div>
+    </section>
+    <script>
+      function abrirWhatsapp() {
+        var nome = document.getElementById("nome").value;
+        var telefone = document.getElementById("telefone").value;
+        var email = document.getElementById("email").value;
+        var msg = document.getElementById("msg").value;
+        var url = "https://wa.me/55031982542020?text=" // Seu numero
+          + "*Formulário de Contato*" + "%0a" // Mensagem personalizada
+          + "%0a" // Quebra de linha
+          + "*Nome*: " + nome + "%0a" // Dados do formulário
+          + "*Telefone*: " + telefone + "%0a"
+          + "*E-mail*: " + email + "%0a"
+          + "*Mensagem*: " + msg;
+        window.open(url, '_blank').focus();
+      }
+    </script>
+  </div>
 </body>
 </html>

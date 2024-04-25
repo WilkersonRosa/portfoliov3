@@ -1,5 +1,22 @@
 
-
+:root {
+  /* cores padrão */
+  --color-1: #d6a41a;
+  --color-2:  #8986dc;
+  --color-3: #f77;
+  --color-4: #434343;
+  --color-5: #fff;
+  --color-background: #000000;
+  /* barra de progresso */
+  --progressbar-background: #777;
+  --progressbar-collor: #0dff00;
+  --progressbar-border: solid 1px #ddd;
+  /* cores botão */
+  --button-color-1: #0dff00;
+  --button-color-2: #045600;
+  --button-color-3: #ffffff;
+  --button-color-4: #67a938;
+}
 
 * {
   margin: 0;
@@ -9,20 +26,48 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 20px;
+  background-color: var(--color-background);
+  ba
+}
+
+.perfilimage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.perfilimage img{
+  width: 300px;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-4);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--button-color-1);  /* creates padding around scroll thumb */
 }
 
 /* Menu */
 
 header {
-  background: #434343;
+  background: var(--color-4);
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  color: #fff;
   font-family: "Concert One", sans-serif;
   font-size: 10pt;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 header ul{
@@ -33,24 +78,36 @@ header ul{
   
 }
  header a{
-  color: #fff;
-  margin: 0 1rem;
   text-decoration: none;
   text-transform: uppercase;
+  
+  margin: 0 1rem;
  }
 
-/* Cabeçalho */
+ header img {
+  width: 40px;
+  filter: hue-rotate(100deg);
+ }
+
+ header img:hover{
+  width: 50px;
+  transform: scale(50px);
+  filter: drop-shadow(0rem 0rem 1rem var(--button-color-1));
+  transition: all 250ms ease-out;
+ }
+
+
+/* Home */
 
 #home {
-  background-color: #000000;
-  background-position: center;
-  background-size: cover;
+  background-color: var(--color-background);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 1rem 5rem 1rem;
+  padding: 5rem 1rem 10rem 1rem;
   color: #fff;
-  height:500px;
+  height:75dvh;
 }
 
 #home p{
@@ -61,24 +118,26 @@ header ul{
 
 #home h1{
   font-size: 50pt;
-  color: #d6a41a;
+  color: var(--color-1);
   font-family: "Concert One", sans-serif;
 }
 
+
 #home h2{
-  color: #8986dc;
+  color: var(--color-2);
 }
 
 #home button{
   font-size: 10pt;
   padding: 1rem;
-  color: #0dff00;
-  background-color: #045600;
+  color: var(--button-color-1);
+  background-color: var(--button-color-2);
   font-family: "Press Start 2P", system-ui;
 }
 #home button:hover{
-  background-color: #0dff00;
-  color: #045600;
+  background-color: var(--button-color-1);
+  color: var(--button-color-2);
+  transition: all 450ms ease-in-out;
 }
 
 #nav {
@@ -89,50 +148,59 @@ header ul{
 /* Sobre */
 
 #about {
-  background-color: #000000;
+  background-color: var(--color-background);
   display: block;
   justify-content: start;
   align-items: center;
-  padding: 5rem 1rem 5rem 1rem;
-  color: #d6a41a;
-  height:500px;
+  padding: 5rem 1rem 7rem 1rem;
+  
+  height: fit-content;
 }
 
-#about div{
+.divcontent{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: start;
-  align-items: center;
+  align-items: left;
   padding: 5rem 1rem 5rem 3rem;
 }
 
-#about h2{
-  text-align: start;
-  font-family: "Concert One", sans-serif;
 
-}
 
 #about span{
-  color: #8986dc;
+  color: var(--color-2);
 }
 
 #about p{
-  color: #f77;
+  color: var(--color-3);
 }
 
 .destaque{
-  color: #0dff00;
+  color: #fff;
+  font-weight: lighter;
+}
+#about h2{
+  text-align: start;
+  font-family: "Concert One", sans-serif;
+  color: var(--color-1);
+}
+.h2style{
+  text-align: start;
+  font-family: "Concert One", sans-serif;
+  color: var(--color-1);
+  justify-content: left;
+  font-size: 25pt;
 }
 
 /* Skills */
 
 #skills{
-  background: #434343;
-  color: #fff;
-  height: 500px;
+  color: var(--color-background);
+  height: fit-content;
   display: flex;
-  flex-wrap: wrap;
-  padding: 5rem;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 2rem;
   
 }
 
@@ -141,89 +209,286 @@ header ul{
 }
 
 #skills h3{
-  color: #8986dc;
+  color: var(--color-2);
 }
-#skills div{
-  margin: 2rem;
+
+.skillprog{
+  background-color: var(--progressbar-background);
+  width: 250px;
+  height: 20px;
   font-family: "Press Start 2P", system-ui;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  border: var(--progressbar-border);
 }
 
-#html div{
-  width: 300px;
-  height: 10px;
-  background: #0dff00;
-  padding: 0 1rem;
-  margin: 0;
+#html::before{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 5px;
+  content: "35%";
+  width: 35%;
+  background-color: var(--progressbar-collor);
 }
 
-#css div{
-  width: 300px;
-  height: 10px;
-  background: #0dff00;
-  padding: 0 1rem;
-  margin: 0;
+#css::before{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 5px;
+  content: "80%";
+  width: 80%;
+  background-color: var(--progressbar-collor);
 }
 
-#github div{
-  width: 300px;
-  height: 10px;
-  background: #0dff00;
-  padding: 0 1rem;
-  margin: 0;
+#JavaScript::before{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 5px;
+  content: "5%";
+  width: 5%;
+  background-color: var(--progressbar-collor);
 }
 
-#JavaScript div{
-  width: 2px;
-  height: 10px;
-  background: #0dff00;
-  padding: 0 1rem;
-  margin: 0;
+#github::before{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 5px;
+  content: "75%";
+  width: 75%;
+  background-color: var(--progressbar-collor);
 }
 
 /* Projetos */
 
 #projects {
-  background: #000000;
-  color: #fff;
-  padding: 5rem;
-}
-
-#projectcontainer{
+  color: var(--color-background);
+  height: fit-content;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  padding: 1rem 1rem 1rem 1rem;
+}
+#projects h2{
+  text-align: start;
+  font-family: "Concert One", sans-serif;
+  color: var(--color-1);
 }
 
-.project{
+.portfoliocontainer{
+  overflow-x: scroll;
+  max-width: 100%;
+}
+
+
+
+.slide-list{
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+
+  --total-items: 4;
+	width: calc(var(--total-items) * 30vw);
+}
+
+.portfoliocontent{
   width: 250px;
   height: 400px;
-  background: #777;
+  background: var(--color-4);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5rem;
+  margin:0 1rem;
   padding: 2rem;
 }
-.project img{
-  border-radius: 5px;
+
+.portfoliocontent span{
+  color: var(--color-2);
 }
 
-/* Rodape */
+.portfoliocontent p{
+  color: var(--color-3);
+}
 
-footer{
-  background: #434343;
-  height: 50px;
+.portfoliocontent img{
+  border-radius: 5px;
+}
+/* Contato */
+
+#contato {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  
+  padding: 1rem 1rem 1rem 1rem;
+
+}
+
+#formcontainer{
+  display: flex;
   align-items: center;
-  padding: 1rem;
-  color: #fff;
+  justify-content: center;
+}
+
+#contato h2{
+  text-align: start;
   font-family: "Concert One", sans-serif;
-  font-size: 10pt;
+  color: var(--color-1);
+}
+
+#formulario {
+  background-color: var(--color-4);
+  border-radius: 15px;
+  max-width: 400px;
+  padding: 2rem 1rem 5rem 1rem;
+}
+
+#formulario input{
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: var(--button-color-3);
+}
+
+#formulario textarea{
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 1rem;
+  background-color: var(--button-color-3);
+}
+
+#formulario button{
+  background-color: var(--button-color-4);
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15pt;
+  margin-top: 1rem;
+}
+
+.hiden {
+  display: none;
 }
 
 /* Dispositivos móveis */
 
-@media (min-width: 850px) {
+@media (min-width: 850px) or (orientation: landscape) {
+  .hiden {
+    display: block;
+  }
+
+  .mobile{
+    display: none;
+  }
+
+  body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
+
+  #home, #about, #projects, #contato{
+    scroll-snap-align: start;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--color-background);
+  }
+
+  .perfilimage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0rem;
+  }
+
+  header {
+    height: 100%;
+    padding: 1rem;
+    width: 50px;
+    right: 0;
+  }
+
+  header ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+  header a{
+    margin: 0;
+  }
+
+  header ul li{
+    margin: 2rem 0;
+  }
+
+  #home {
+    background-image: url("source/portfolio-willrosa-background.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: calc(100vw - 106px);
+    height: 100vh;
+  }
+
+  #about{
+    display: flex;
+    flex-direction: row;
+    width: calc(100vw - 106px);
+    height: 100vh;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  #info, #skillcont{
+    padding: 1rem 10rem 1rem 1rem;
+  }
+
+  .divcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: left;
+    padding: 1rem 1rem 1rem 3rem;
+  }
+
+  #projects{
+    height: 100vh;
+    max-width: calc(100vw - 106px);
+    padding: 1rem 1rem 1rem 0rem;
+  }
+
+  .portfoliocontainer::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
   
+  .portfoliocontainer::-webkit-scrollbar-track {
+    background: var(--color-4);        /* color of the tracking area */
+    border-radius: 1rem;
+  }
+  
+  .portfoliocontainer::-webkit-scrollbar-thumb {
+    background-color: var(--button-color-1);    /* color of the scroll thumb */
+    border-radius: 1rem;       /* roundness of the scroll thumb */
+    border: 3px solid var(--color-4);  /* creates padding around scroll thumb */
+  }
+
+  #contato {
+    width: calc(100vw - 106px);
+    height: 100vh;
+    padding: 1rem 0 0 1rem;
+    margin: 0;
+  }
 }
